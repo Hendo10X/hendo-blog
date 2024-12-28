@@ -11,8 +11,16 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        text: "var(--text)",
+
       },
+      fontFamily: {
+        "jetBrains": "var(--font-jetbrains)",
+        "inter": "var(--font-inter)",
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 } satisfies Config;
