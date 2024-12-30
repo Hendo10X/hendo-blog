@@ -17,7 +17,7 @@ const Posts = ({ posts }: Props) => {
             </Link>
             <div className='mt-2'>
                 {posts?.tags?.map((tag) => (
-                    <span key={tag?._id} className='mt-2 mr-2 p-1 text-sm border rounded-md border-gray-300 font-jetBrains hover:bg-gray-200 dark: hover:text-black'>{tag?.name}</span>
+                    <span key={tag?._id} className='mt-2 mr-2 p-1 text-sm border rounded-md border-gray-300 font-jetBrains hover:bg-gray-200 dark: hover:text-black cursor-pointer'>{tag?.name}</span>
                 ))}
             </div>
 
