@@ -9,6 +9,7 @@ async function getposts() {
         slug,
          publishedAt,
         excerpt,
+        _id,
         tags[] -> {
             _id,
             name,
@@ -19,6 +20,8 @@ async function getposts() {
   const data = await client.fetch(query)
   return data
 }
+
+const revalidate = 60;
 export default async function Home() {
   const posts: Post[] = await getposts()
   console.log(posts, 'posts')
