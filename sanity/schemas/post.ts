@@ -18,7 +18,7 @@ export const post = {
         validation: (Rule: Rule) => Rule.required().error('Slug is required'),
     },
     {
-        name: 'PublishedAt',
+        name: 'publishedAt',
         title: 'Published At',
         type: 'datetime',
         validation: (Rule: Rule) => Rule.required().error('Published At is required'),

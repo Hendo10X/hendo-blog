@@ -9,6 +9,11 @@ async function getposts() {
         slug,
          publishedAt,
         excerpt,
+        tags[] -> {
+            _id,
+            name,
+            slug
+  }
     }
     `
   const data = await client.fetch(query)
