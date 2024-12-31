@@ -1,6 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import { ReactNode } from "react";
 
 export function FadeUp({
@@ -12,8 +14,22 @@ export function FadeUp({
     delay?: number;
     duration?: number;
 }) {
+    const controls = useAnimation();
+    const [ref, inView] = useInView({ triggerOnce: true });
+
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        } else {
+            controls.start("hidden");
+        }
+    }, [controls, inView]);
+
     return (
         <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
             variants={{
                 hidden: {
                     opacity: 0,
@@ -22,12 +38,12 @@ export function FadeUp({
                 visible: {
                     opacity: 1,
                     y: 0,
+                    transition: {
+                        delay,
+                        duration,
+                    },
                 },
             }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ delay, type: "spring", duration }}
         >
             {children}
         </motion.div>

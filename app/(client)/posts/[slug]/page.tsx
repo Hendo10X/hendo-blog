@@ -63,7 +63,7 @@ const page = async ({ params }: Params) => {
                         ))}
                     </div>
                     <FadeUp delay={0.3} duration={1.6} >
-                        <div className='mt-8 text-justify prose-headings:my-5 prose-heading:text-3xl prose-p:mb-2 prose-p:mt-2 prose-p:leading-7 prose-li:list-disc prose-li:leading-7 prose-li:ml-4 tracking-tight'>
+                        <div className='mt-8 mb-8 text-justify prose-headings:my-5 prose-heading:text-3xl prose-p:mb-2 prose-p:mt-2 prose-p:leading-7 prose-li:list-disc prose-li:leading-7 prose-li:ml-4 tracking-tight'>
                             <PortableText value={post[0]?.body} />
                         </div>
                     </FadeUp>
