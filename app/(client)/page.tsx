@@ -22,7 +22,7 @@ async function getposts() {
   return data
 }
 
-const revalidate = 60;
+export const revalidate = 60;
 export default async function Home() {
   const posts: Post[] = await getposts()
   console.log(posts, 'posts')

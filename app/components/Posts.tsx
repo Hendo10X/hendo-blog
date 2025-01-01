@@ -9,7 +9,7 @@ interface Props {
 
 const Posts = ({ posts }: Props) => {
     return (
-        <div>
+        <div className='mb-5'>
             <Link href={`/posts/${posts.slug.current}`}>
                 <h2 className="mt-8 text-xl font-bold mb-2">{posts?.title}</h2>
                 <p className='font-jetBrains text-sm mb-2'>{new Date(posts?.publishedAt).toDateString()}</p>
