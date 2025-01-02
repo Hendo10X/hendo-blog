@@ -3,7 +3,7 @@ import { useTheme } from 'next-themes'
 
 
 const Themetoggle = () => {
-    const { theme, setTheme } = useTheme()
+    const { setTheme } = useTheme()
     return (
         <div className='flex gap-2'>
             <button onClick={() => setTheme('light')}>L</button>
