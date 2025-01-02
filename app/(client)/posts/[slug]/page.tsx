@@ -1,3 +1,5 @@
+
+
 import { FadeUp } from '@/app/components/Fadeup';
 import Header from '@/app/components/Header';
 import { client } from '@/sanity/lib/client';
