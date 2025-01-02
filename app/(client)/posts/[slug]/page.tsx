@@ -1,4 +1,3 @@
-
 import { FadeUp } from '@/app/components/Fadeup';
 import Header from '@/app/components/Header';
 import { client } from '@/sanity/lib/client';
@@ -55,7 +54,7 @@ const page = async ({ params }: Params) => {
                         {new Date(post[0]?.publishedAt).toDateString()}
                     </span>
                     <div className='mt-4'>
-                        {post[0]?.tags?.map((tag: any) => (
+                        {post[0]?.tags?.map((tag: { _id: string; name: string; slug: { current: string } }) => (
                             <Link key={tag._id} href={`/tag/${tag.slug.current}`}>
                                 <span className='mt-2 mr-2 p-1 text-sm border rounded-md border-gray-300 font-jetbrains hover:bg-gray-200 dark:hover:text-black'>
                                     {tag.name}

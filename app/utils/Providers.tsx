@@ -1,6 +1,6 @@
 "use client"
 import { ThemeProvider } from "next-themes"
-import { ReactNode } from "react"
+
 
 interface Props {
     children: React.ReactNode
